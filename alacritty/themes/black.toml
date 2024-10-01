@@ -1,0 +1,36 @@
+# Colors (Dark Theme)
+
+# Default colors
+[colors.primary]
+background = '#0c0e0f'  # Pure black background
+foreground = '#fefefe'  # White text
+
+# Normal colors
+[colors.normal]
+black   = '#000000'    # Black
+red     = '#FF5555'    # Red
+green   = '#50FA7B'    # Green
+yellow  = '#F1FA8C'    # Yellow
+blue    = '#BD93F9'    # Blue
+magenta = '#FF79C6'    # Magenta
+cyan    = '#8BE9FD'    # Cyan
+white   = '#ffffff'    # White
+
+# Bright colors
+[colors.bright]
+black   = '#4D4D4D'    # Bright Black
+red     = '#FF6E6E'    # Bright Red
+green   = '#69FF94'     # Bright Green
+yellow  = '#FFFFA5'     # Bright Yellow
+blue    = '#D6ACFF'     # Bright Blue
+magenta = '#FF92D0'     # Bright Magenta
+cyan    = '#A4FFFF'     # Bright Cyan
+white   = '#FFFFFF'     # Bright White
+
+[colors.selection]
+text       = '#FFFFFF'  # White text for selection
+background = '#29263c'   # Dark background for selection
+
+[colors.cursor]
+cursor = '#FFFFFF'       # White cursor
+
