@@ -1,5 +1,5 @@
 * {
-  font-family: "Jetbrains Mono NerdFont";
+  font-family: "Hack Nerd Font";
 }
 
 #waybar {
@@ -45,6 +45,16 @@
 
 #pulseaudio {
   color: #14b8a6;
+  margin-right: 4px;
+}
+
+#backlight {
+  color: #ff0000;
+  margin-right: 4px;
+}
+
+#battery {
+  color: #0000ff;
   margin-right: 4px;
 }
 
