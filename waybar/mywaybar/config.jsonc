@@ -95,7 +95,11 @@
 	  }
   },
   "hyprland/window": {
-    "format": "{}"
+    //"format": "{}",
+    "format": "<span  weight='bold' >{title}</span>",
+    "max-length": 60,
+    "icon": true,
+    "icon-size": 15,
   },
   "metwork": {
     "format": " 󰖩 ",
