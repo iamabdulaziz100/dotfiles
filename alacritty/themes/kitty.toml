@@ -1,0 +1,29 @@
+# Alacritty Configuration File
+
+# Default colors
+[colors.primary]
+background = '#1c1f24'
+foreground = '#ffffff'
+
+# Normal colors
+[colors.normal]
+black   = '#1c1f24'
+red     = '#c62828'
+green   = '#3c763d'
+yellow  = '#e3a000'
+blue    = '#005cc5'
+magenta = '#c678dd'
+cyan    = '#00b4d8'
+white   = '#f8f8f2'
+
+# Bright colors
+[colors.bright]
+black   = '#7e828b'
+red     = '#f44747'
+green   = '#a5d33a'
+yellow  = '#ffb300'
+blue    = '#0095e6'
+magenta = '#d48fd0'
+cyan    = '#00d7d7'
+white   = '#ffffff'
+
