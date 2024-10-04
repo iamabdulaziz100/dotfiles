@@ -1,6 +1,7 @@
 # Environment Variables
 set $envc QTQPAPLATFORM wayland
-set $envq QTQPAPLATFORMTHEME qt5ct
+# set $envq QTQPAPLATFORMTHEME qt5ct
+# exec /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 exec_always $envc
 
@@ -23,7 +24,7 @@ set $right l
 
 # Your preferred applications
 set $term alacritty
-set $fileManager nemo
+set $fileManager thunar
 set $browser brave
 set $menu ~/.config/rofi/launchers/type-1/launcher.sh
 set $logoutMenu ~/.config/rofi/powermenu/type-1/powermenu.sh
