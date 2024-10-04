@@ -1,5 +1,8 @@
 # Environment Variables
-exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
+set $envc QTQPAPLATFORM wayland
+set $envq QTQPAPLATFORMTHEME qt5ct
+
+exec_always $envc
 
 # autostart
 exec waybar &
@@ -221,6 +224,13 @@ bindsym  XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym  XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 bindsym  XF86MonBrightnessUp exec brightnessctl set 1%+
 bindsym  XF86MonBrightnessDown exec brightnessctl set 1%-
+
+# window border colors
+client.focused          #285577 #285577 #ffffff #285577
+# client.unfocused        #000000 #000000 #ffffff #000000
+# client.focused_inactive  #00000000 #000000 #ffffff #00000000
+# client.urgent           #ff00ff #ff00ff #ff00ff #ff00ff
+
 
 #
 # Status Bar:

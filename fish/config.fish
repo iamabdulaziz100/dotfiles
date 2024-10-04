@@ -6,6 +6,11 @@ set TERM "xterm-256color"           # Sets the terminal type
 set -x EDITOR "nvim"                # $EDITOR use neovim in terminal
 set -x MANPAGER "nvim +Man!"        # "nvim" as manpager
 
+# set qt application theme in a wm
+#set -gx QT_QPA_PLATFORMTHEME qt5ct
+#set -gx QT_QPA_PLATFORMTHEME qt6ct
+#set -gx QT_QPA_PLATFORM wayland-egl
+
 # Set up fzf key bindings
 fzf --fish | source
 
@@ -88,3 +93,7 @@ alias e="exit"
 # Starship prompt
 starship init fish | source 
 set -gx STARSHIP_CONFIG ~/.config/starship/dtstarship.toml
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
