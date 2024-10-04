@@ -1,4 +1,4 @@
-### Variables
+## Variables
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -10,23 +10,26 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 set $fileManager nemo
-set $browser chromium
+set $browser brave
 set $menu ~/.config/rofi/launchers/type-1/launcher.sh
 set $logoutMenu ~/.config/rofi/powermenu/type-1/powermenu.sh
 
 # autostart
-exec nm-applet &
 exec waybar &
+exec_always autotiling
+exec nm-applet &
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec mako &
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/wallpapers/aesthetic.jpg fill
+output * bg ~/wallpapers/ac.jpg fill
 #
 #
 output eDP-1 resolution 1920x1080 position 0,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
 
 ### Idle configuration
 #
@@ -61,13 +64,17 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+b exec $browser
 bindsym $mod+Shift+e exec $fileManager
 
+# Screenshot keybinds for Sway
+bindsym Print exec grim -o eDP-1 "${HOME}/Pictures/screenshots/screenshot-$(date +%F-%T).png"
+bindsym $mod+Print exec grim -g "$(slurp)" "${HOME}/Pictures/screenshots/screenshot-$(date +%F-%T).png"
+
 # Kill focused window
 bindsym $mod+q kill
 
 # window management
-for_window [class="^.*"] border pixel 1
-gaps inner 2
-gaps outer 2
+for_window [class="^.*"] border pixel 2
+gaps inner 0
+gaps outer 0
 
 # Start your launcher
 bindsym $mod+space exec $menu
@@ -94,10 +101,10 @@ bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 # Or use $mod+[up|down|left|right]
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # Move the focused window with the same, but add Shift
 bindsym $mod+Shift+$left move left
@@ -197,6 +204,11 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+bindsym $mod+Left  resize shrink width 10px
+bindsym $mod+Right resize grow width 10px
+bindsym $mod+Up    resize shrink height 10px
+bindsym $mod+Down  resize grow height 10px
 
 # Laptop multimedia keys for volume and LCD brightness
 bindsym  XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
