@@ -6,7 +6,7 @@
 -- local M = {}
 --
 -- M.base46 = {
--- 	theme = "chadracula",
+-- 	theme = "adwaita",
 --
 -- 	-- hl_override = {
 -- 	-- 	Comment = { italic = true },
@@ -16,24 +16,23 @@
 --
 -- return M
 
-
 local options = {
 
   base46 = {
-    theme = "chadracula", -- default theme
+    theme = "adwaita", -- default theme
     hl_add = {},
     hl_override = {},
     integrations = {},
     changed_themes = {},
     transparency = false,
-    theme_toggle = { "chadracula", "one_light" },
+    theme_toggle = { "adwaita", "adwaita" },
   },
 
   ui = {
     cmp = {
-      icons_left = false, -- only for non-atom styles!
-      lspkind_text = true,
+      icons_left = true, -- only for non-atom styles!
       style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+      abbr_maxwidth = 60,
       format_colors = {
         tailwind = false, -- will work for css lsp too
         icon = "󱓻",
@@ -44,10 +43,10 @@ local options = {
 
     statusline = {
       enabled = true,
-      theme = "default", -- default/vscode/vscode_colored/minimal
+      theme = "minimal", -- default/vscode/vscode_colored/minimal
       -- default/round/block/arrow separators work only for default statusline theme
       -- round and block will work for minimal theme only
-      separator_style = "default",
+      separator_style = "round",
       order = nil,
       modules = nil,
     },
@@ -58,6 +57,7 @@ local options = {
       lazyload = true,
       order = { "treeOffset", "buffers", "tabs", "btns" },
       modules = nil,
+      bufwidth = 21,
     },
   },
 
@@ -121,7 +121,7 @@ local options = {
     excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
   },
 
-  mason = { pkgs = {} },
+  mason = { pkgs = {}, skip = {} },
 
   colorify = {
     enabled = true,
