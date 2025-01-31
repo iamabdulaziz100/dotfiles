@@ -9,6 +9,7 @@ export MANPAGER="nvim +Man!"  # Sets Neovim as the pager for man pages
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+PS1='\[\e[1;32m\][\u@\h \[\e[1;34m\]\w\[\e[1;32m\]]\[\e[0m\]\$ '
 
 ### ALIASES ###
 
