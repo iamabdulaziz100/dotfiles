@@ -1,0 +1,19 @@
+[theme]
+theme = "slick"
+[icons]
+icons = "awesome6"
+[[block]]
+block = "backlight"
+device = "amdgpu_bl1"
+[[block]]
+block = "sound"
+format = " $icon $volume "
+step_width = 3
+[[block]]
+block = "battery"
+format = " $icon $percentage "
+[[block]]
+block = "time"
+interval = 60
+[block.format]
+full = " $icon $timestamp.datetime(f:'%a %b %d %Y') "
