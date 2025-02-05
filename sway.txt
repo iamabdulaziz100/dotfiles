@@ -1,0 +1,12 @@
+foot
+sway
+swaybg
+swaylock
+swayidle
+polkit
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
+waybar
+i3status-rust
+rofi-wayland
+autotilling-rs
