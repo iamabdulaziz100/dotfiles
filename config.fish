@@ -1,6 +1,6 @@
 ### EXPORT ###
 set fish_greeting # Supresses fish"s intro message
-set -gx PATH $PATH /home/paow/.local/bin
+set -gx PATH $PATH $HOME/.local/bin/
 set TERM xterm-256color # Sets the terminal type
 set -x EDITOR nvim # $EDITOR use neovim in terminal
 set -x MANPAGER "nvim +Man!" # "nvim" as manpager
@@ -20,14 +20,12 @@ end
 
 ### ALIASES ###
 
-# navigation
-alias ..="cd .."
-
 # changing "ls" to "eza"
 alias l="eza --icons --color=always --group-directories-first --git"
 alias ls="eza -a --icons --color=always --group-directories-first --git"
 alias ll="eza -a --long --icons --color=always --group-directories-first --git"
-alias lt="eza -a --long --tree --icons --color=always --group-directories-first --git"
+alias lt="eza -a --long --tree --icons --color=always --group-directories-first --git --level=1"
+alias lta="eza -a --long --tree --icons --color=always --group-directories-first --git"
 
 # changing "cd" to "zoxide"
 alias cd="z"
@@ -40,7 +38,6 @@ alias v="nvim"
 
 # aliases for python
 alias p="python"
-alias sp="source ~/Projects/cs50-web/cs50/bin/activate.fish"
 
 # yazi terminal file manpager
 #alias y="yazi"
@@ -55,3 +52,5 @@ alias spu="sudo pacman -Syyu"
 alias spc="sudo pacman -Rns $(pacman -Qtdq)"
 
 alias e="exit"
+
+starship init fish | source
