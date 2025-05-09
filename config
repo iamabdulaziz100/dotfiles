@@ -1,0 +1,16 @@
+theme                   = carbonfox
+font-family             = JetBrainsMono Nerd Font
+font-size               = 13
+background              = #000000
+background-opacity      = 0.90
+mouse-hide-while-typing	= true
+gtk-tabs-location	      = hidden
+scrollback-limit        = 10000
+window-theme            = system
+window-height           = 25
+window-width            =	110
+focus-follows-mouse     = true
+gtk-adwaita             = true
+desktop-notifications	  =	true
+window-padding-x        = 10,10
+window-padding-y        = 10,10
