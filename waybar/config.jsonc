@@ -21,6 +21,13 @@
         "custom/power"
     ],
     // Modules configuration
+    "hyprland/window": {
+      "format": "{title}",
+      "icon": true,
+      "icon-size": 18,
+      "max-length": 50,
+      "tooltip": true
+    },
     "tray": {
         // "icon-size": 15,
         "spacing": 10
