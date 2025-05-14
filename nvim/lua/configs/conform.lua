@@ -1,11 +1,11 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { "prettierd" },
-    html = { "prettierd" },
+    css = { "prettier" },
+    html = { "prettier" },
     javascript = { "prettierd" },
     htmldjango = { "djlint" },
-    python = { "isort", "black" },
+    python = { "isort", "ruff" },
   },
 
   -- format_on_save = {
