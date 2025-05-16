@@ -1,14 +1,18 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    // "height": 25, // Waybar height (to be removed for auto height)
-    "width": 1920, // Waybar width
-    "spacing": 2, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "position": "top",
+    "width": 1920,
+    "spacing": 4,  // Increased spacing from 2 to 4 for better visual separation
+    "margin-top": 3,  // Added margin for a cleaner look
+    "margin-bottom": 0,
+    
+    // Module positioning
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
+        "sway/workspaces",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock"  // Moved clock to center for better balance
     ],
     "modules-right": [
         "pulseaudio",
@@ -16,70 +20,37 @@
         "power-profiles-daemon",
         "backlight",
         "battery",
-        "clock",
         "tray",
         "custom/power"
     ],
+    
     // Modules configuration
-    "hyprland/window": {
-      "format": "{title}",
-      "icon": true,
-      "icon-size": 18,
-      "max-length": 50,
-      "tooltip": true
+    "sway/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "sort-by-number": true
     },
-    "tray": {
-        // "icon-size": 15,
-        "spacing": 10
+    
+    "sway/window": {
+        "format": "{title}",
+        "icon": true,
+        "icon-size": 18,
+        "max-length": 50,
+        "tooltip": true,
+        "separate-outputs": true
     },
+    
     "clock": {
         "timezone": "Asia/Dhaka",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %b%d %I:%M %p}"
-        //"format-alt": "{:%a %b%d %Y :%I:%M %p}"
+        "format": "{:%a %b %d %I:%M %p}",  // Added space between month and day
+        "format-alt": "{:%Y-%m-%d %H:%M:%S}",  // Added an alternate format
+        "on-click": "mode"  // Toggle between formats on click
     },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
+
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+        "scroll-step": 5,  // Added scroll step
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -90,13 +61,65 @@
             "headphone": "",
             "hands-free": "",
             "headset": "",
-            "default": ["", "", ""]
+            "default": ["", "", " "]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"  // Added right-click to mute
     },
-  "custom/power": {
-      "format": "⏻",
-      "tooltip": false,
-      "on-click": "wlogout"
-  }
+    
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr}  \nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+        }
+    },
+    
+    "backlight": {
+        // "device": "amdgpu_bl1",  // Specific backlight device
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+    },
+    
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 60,
+        "on-click": "gnome-power-statistics"
+    },
+    
+    "tray": {
+        "icon-size": 16,  // Defined icon size
+        "spacing": 10
+    },
+    
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout",
+        // "on-click-right": "systemctl suspend"  // Added right-click to suspend
+    }
 }

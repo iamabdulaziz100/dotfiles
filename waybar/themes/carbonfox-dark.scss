@@ -1,0 +1,96 @@
+/* ===========================
+   Global Variables
+=========================== */
+$font-family: "JetBrainsMono Nerd Font";
+$font-weight: bold;
+$font-size: 13px;
+
+$color-global-bg: #161616;
+$color-global-fg: #000000;
+$color-global-light: #a6adc8;
+$color-global-shadow: rgba(0, 0, 0, 0.2);
+
+/* ===========================
+   Workspaces
+=========================== */
+$color-workspaces-button-bg: #42be65;
+$color-workspaces-button-hover-bg: #2d8a4a;
+$color-workspaces-button-active-bg: #1f7239;
+$color-workspaces-button-active-border: rgba(255, 255, 255, 0.2);
+$color-workspaces-button-urgent-bg: #f38ba8;
+
+/* ===========================
+   Window
+=========================== */
+$color-window-bg: #444444;
+$color-window-hover-bg: #303030;
+$color-window-fg: #ffffff;
+
+/* ===========================
+   Pulseaudio
+=========================== */
+$color-pulseaudio-bg: #9130ac;
+$color-pulseaudio-hover-bg: #9161ac;
+$color-pulseaudio-muted-bg: #90b1b1;
+$color-pulseaudio-muted-hover-bg: #7f849c;
+
+/* ===========================
+   Wireplumber
+=========================== */
+$color-wireplumber-bg: #fab387;
+$color-wireplumber-hover-bg: #f9c096;
+$color-wireplumber-muted-bg: #f38ba8;
+$color-wireplumber-muted-hover-bg: #e78284;
+
+/* ===========================
+   Network
+=========================== */
+$color-network-bg: #2980b9;
+$color-network-hover-bg: #1a6387;
+$color-network-disconnected-bg: #f53c3c;
+$color-network-disconnected-hover-bg: #b92b2b;
+
+/* ===========================
+   Power Profiles
+=========================== */
+$color-ppd-performance-bg: #f53c3c;
+$color-ppd-performance-hover-bg: #efd693;
+$color-ppd-balanced-bg: #2871b9;
+$color-ppd-balanced-hover-bg: #2980b9;
+$color-ppd-powersaver-bg: #2ecc71;
+$color-ppd-powersaver-hover-bg: #2ecc;
+
+/* ===========================
+   Backlight
+=========================== */
+$color-backlight-bg: #f5c2e7;
+$color-backlight-hover-bg: #e5b0d6;
+
+/* ===========================
+   Battery
+=========================== */
+$color-battery-bg: #ff6e67;
+$color-battery-hover-bg: #ff4e50;
+$color-battery-charging-bg: #26a65b;
+$color-battery-charging-hover-bg: #87d497;
+$color-battery-critical-bg: #f53c3c;
+$color-battery-critical-hover-bg: #e64553;
+
+/* ===========================
+   Clock
+=========================== */
+$color-clock-bg: #64727d;
+$color-clock-hover-bg: #a1acc0;
+
+/* ===========================
+   Tray
+=========================== */
+$color-tray-bg: #2980b9;
+$color-tray-hover-bg: #64a6c8;
+$color-tray-needs-attention-bg: #f38ba8;
+
+/* ===========================
+   Custom Power
+=========================== */
+$color-custom-power-bg: #f85552;
+$color-custom-power-hover-bg: #e64553;

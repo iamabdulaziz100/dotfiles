@@ -1,0 +1,276 @@
+/* ==========================
+  Import Colorscheme
+========================== */
+@use "themes/carbonfox-dark" as *;
+
+/* ===========================
+   Base Style
+=========================== */
+* {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+}
+
+#waybar {
+  background-color: $color-global-bg;
+  transition: background-color 0.5s;
+  box-shadow: inset 0 -3px $color-global-shadow;
+}
+
+/* ===========================
+   Shared Modules
+=========================== */
+#window,
+#workspaces button,
+#clock,
+#battery,
+#power-profiles-daemon,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#tray,
+#custom-power {
+  margin: 3px;
+  padding: 0 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  color: $color-global-fg;
+  background: inherit;
+  box-shadow: inset 0 -3px $color-global-shadow;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  box-shadow: inset 0 -3px transparent;
+}
+
+button:hover {
+  box-shadow: inset 0 -3px $color-global-light;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===========================
+   Workspaces
+=========================== */
+#workspaces {
+  margin-left: 6px;
+  margin-right: 10px;
+}
+
+#workspaces button {
+  background-color: $color-workspaces-button-bg;
+  color: $color-global-bg;
+}
+
+#workspaces button:hover {
+  background-color: $color-workspaces-button-hover-bg;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+  background-color: $color-workspaces-button-active-bg;
+  color: $color-global-bg;
+  border: 1px solid $color-workspaces-button-active-border;
+}
+
+#workspaces button.urgent {
+  background-color: $color-workspaces-button-urgent-bg;
+}
+
+/* ===========================
+   Window
+=========================== */
+#window {
+  background-color: $color-window-bg;
+  color: $color-window-fg;
+}
+
+#window:hover {
+  background-color: $color-window-hover-bg;
+}
+
+/* ===========================
+   Pulseaudio
+=========================== */
+#pulseaudio {
+  background-color: $color-pulseaudio-bg;
+  color: $color-global-fg;
+}
+
+#pulseaudio:hover {
+  background-color: $color-pulseaudio-hover-bg;
+}
+
+#pulseaudio.muted {
+  background-color: $color-pulseaudio-muted-bg;
+}
+
+#pulseaudio.muted:hover {
+  background-color: $color-pulseaudio-muted-hover-bg;
+}
+
+/* ===========================
+   Wireplumber
+=========================== */
+#wireplumber {
+  background-color: $color-wireplumber-bg;
+}
+
+#wireplumber:hover {
+  background-color: $color-wireplumber-hover-bg;
+}
+
+#wireplumber.muted {
+  background-color: $color-wireplumber-muted-bg;
+}
+
+#wireplumber.muted:hover {
+  background-color: $color-wireplumber-muted-hover-bg;
+}
+
+/* ===========================
+   Network
+=========================== */
+#network {
+  background-color: $color-network-bg;
+}
+
+#network:hover {
+  background-color: $color-network-hover-bg;
+}
+
+#network.disconnected {
+  background-color: $color-network-disconnected-bg;
+}
+
+#network.disconnected:hover {
+  background-color: $color-network-disconnected-hover-bg;
+}
+
+/* ===========================
+   Power-Profiles
+=========================== */
+#power-profiles-daemon {
+  padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+  background-color: $color-ppd-performance-bg;
+}
+
+#power-profiles-daemon.performance:hover {
+  background-color: $color-ppd-performance-hover-bg;
+}
+
+#power-profiles-daemon.balanced {
+  background-color: $color-ppd-balanced-bg;
+}
+
+#power-profiles-daemon.balanced:hover {
+  background-color: $color-ppd-balanced-hover-bg;
+}
+
+#power-profiles-daemon.power-saver {
+  background-color: $color-ppd-powersaver-bg;
+}
+
+#power-profiles-daemon.power-saver:hover {
+  background-color: $color-ppd-powersaver-hover-bg;
+}
+
+/* ===========================
+   Backlight
+=========================== */
+#backlight {
+  background-color: $color-backlight-bg;
+}
+
+#backlight:hover {
+  background-color: $color-backlight-hover-bg;
+}
+
+/* ===========================
+   Battery
+=========================== */
+#battery {
+  background-color: $color-battery-bg;
+}
+
+#battery:hover {
+  background-color: $color-battery-hover-bg;
+}
+
+#battery.charging,
+#battery.plugged {
+  background-color: $color-battery-charging-bg;
+}
+
+#battery.charging:hover,
+#battery.plugged:hover {
+  background-color: $color-battery-charging-hover-bg;
+}
+
+#battery.critical:not(.charging) {
+  background-color: $color-battery-critical-bg;
+  animation: blink 0.5s steps(12) infinite alternate;
+}
+
+#battery.critical:not(.charging):hover {
+  background-color: $color-battery-critical-hover-bg;
+}
+
+/* ===========================
+   Clock
+=========================== */
+#clock {
+  background-color: $color-clock-bg;
+}
+
+#clock:hover {
+  background-color: $color-clock-hover-bg;
+}
+
+/* ===========================
+   Tray
+=========================== */
+#tray {
+  background-color: $color-tray-bg;
+}
+
+#tray:hover {
+  background-color: $color-tray-hover-bg;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: $color-tray-needs-attention-bg;
+}
+
+/* ===========================
+   Custom Power
+=========================== */
+#custom-power {
+  background-color: $color-custom-power-bg;
+  margin-right: 6px;
+}
+
+#custom-power:hover {
+  background-color: $color-custom-power-hover-bg;
+}
+
+/* ===========================
+   Animations
+=========================== */
+@keyframes blink {
+  to {
+    background-color: $color-global-bg;
+    color: $color-battery-critical-bg;
+  }
+}
