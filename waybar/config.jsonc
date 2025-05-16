@@ -107,7 +107,7 @@
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""],
-        "interval": 60,
+        "interval": 1,
         "on-click": "gnome-power-statistics"
     },
     
