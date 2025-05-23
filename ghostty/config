@@ -1,16 +1,27 @@
-theme                   = carbonfox
-font-family             = JetBrainsMono Nerd Font
-font-size               = 13
-background              = #000000
-background-opacity      = 0.90
-mouse-hide-while-typing	= true
-gtk-tabs-location	      = hidden
-scrollback-limit        = 10000
-window-theme            = system
-window-height           = 25
-window-width            =	110
-focus-follows-mouse     = true
-gtk-adwaita             = true
-desktop-notifications	  =	true
-window-padding-x        = 10,10
-window-padding-y        = 10,10
+# Appearence
+theme = Oxocarbon
+adw-toolbar-style = raised
+gtk-single-instance = true
+gtk-tabs-location = hidden
+bold-is-bright = true
+desktop-notifications = true
+
+# Font settings
+font-family = JetBrainsMono Nerd Font
+font-size = 13
+
+# Splits
+focus-follows-mouse = true
+keybind = ctrl+h=new_split:left
+keybind = ctrl+l=new_split:right
+keybind = ctrl+k=new_split:up
+keybind = ctrl+j=new_split:down
+
+# Split navigation
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+l=goto_split:right
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+j=goto_split:down
+
+# Show tabs overview
+keybind = ctrl+shift+o=toggle_tab_overview
