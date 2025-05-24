@@ -8,8 +8,8 @@
     
     // Module positioning
     "modules-left": [
-        "sway/workspaces",
-        "sway/window"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center": [
         "clock"  // Moved clock to center for better balance
@@ -25,13 +25,13 @@
     ],
     
     // Modules configuration
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "format": "{name}",
         "all-outputs": true,
         "sort-by-number": true
     },
     
-    "sway/window": {
+    "hyprland/window": {
         "format": "{title}",
         "icon": true,
         "icon-size": 18,
