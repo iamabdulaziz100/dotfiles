@@ -5,6 +5,7 @@ set -g fish_greeting
 
 # PATH
 fish_add_path ~/.local/bin
+fish_add_path /var/lib/flatpak/exports/bin
 
 # Terminal & editor
 set -gx TERM xterm-256color
