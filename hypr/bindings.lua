@@ -2,10 +2,10 @@
 hl.unbind("SUPER + J") -- was: Toggle window split
 hl.unbind("SUPER + K") -- was: Keybindings
 hl.unbind("SUPER + L") -- was: Toggle workspace layout
-o.bind("SUPER + H", "Focus previous window (wrap)", hl.dsp.window.cycle_next({ next = false }))
+o.bind("SUPER + H", "Focus previous window", hl.dsp.focus({ direction = "l" }))
 o.bind("SUPER + J", "Focus on below window", hl.dsp.focus({ direction = "d" }))
 o.bind("SUPER + K", "Focus on above window", hl.dsp.focus({ direction = "u" }))
-o.bind("SUPER + L", "Focus next window (wrap)", hl.dsp.window.cycle_next())
+o.bind("SUPER + L", "Focus next window", hl.dsp.focus({ direction = "r" }))
 
 -- Vim HJKL: swap/move window
 o.bind("SUPER + SHIFT + H", "Swap window to the left", hl.dsp.window.swap({ direction = "l" }))
