@@ -28,9 +28,13 @@ end
 
 ### ===== ALIASES =====
 
+#Nvim
+alias nv="NVIM_APPNAME=my-nvchad nvim"
+
 # eza
-alias l="eza --icons --color=always"
+alias l="eza --icons --group-directories-first --color=always --git"
 alias ls="eza -a --icons --color=always --group-directories-first --git"
+alias t="eza   --tree --icons --color=always --group-directories-first --git --level=1"
 alias lt="eza -a --long --tree --icons --color=always --group-directories-first --git --level=1"
 
 # zoxide
