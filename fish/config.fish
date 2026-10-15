@@ -5,11 +5,23 @@
 set -g fish_greeting
 
 # PATH
+
+# Linux
+# fish_add_path /var/lib/flatpak/exports/bin
+
+# macOS (Apple Silicon)
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
+
+# Shared
 fish_add_path ~/.local/bin
 
+
 # Terminal & editor
+# Linux
+# set -gx TERM xterm-256color
+
+# macOS: use the terminal's default TERM
 set -gx EDITOR nvim
 set -gx MANPAGER "nvim +Man!"
 
@@ -28,6 +40,13 @@ end
 
 
 ### ===== ALIASES =====
+
+# Nvim
+# Linux
+# alias nv="NVIM_APPNAME=my-nvchad nvim"
+
+# macOS
+alias nv="env NVIM_APPNAME=my-nvchad nvim"
 
 # eza
 alias l="eza --icons --group-directories-first --color=always --git"
