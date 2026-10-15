@@ -1,14 +1,15 @@
+
 ### ===== ENVIRONMENT =====
 
 # Disable greeting
 set -g fish_greeting
 
 # PATH
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
 fish_add_path ~/.local/bin
-fish_add_path /var/lib/flatpak/exports/bin
 
 # Terminal & editor
-set -gx TERM xterm-256color
 set -gx EDITOR nvim
 set -gx MANPAGER "nvim +Man!"
 
@@ -28,13 +29,10 @@ end
 
 ### ===== ALIASES =====
 
-#Nvim
-alias nv="NVIM_APPNAME=my-nvchad nvim"
-
 # eza
 alias l="eza --icons --group-directories-first --color=always --git"
 alias ls="eza -a --icons --color=always --group-directories-first --git"
-alias t="eza   --tree --icons --color=always --group-directories-first --git --level=1"
+alias t="eza --tree --icons --color=always --group-directories-first --git --level=1"
 alias lt="eza -a --long --tree --icons --color=always --group-directories-first --git --level=1"
 
 # zoxide
